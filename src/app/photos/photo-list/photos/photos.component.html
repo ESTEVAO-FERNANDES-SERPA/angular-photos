@@ -1,0 +1,24 @@
+<!--
+  <ol class="list-unstyled row text-center">
+  <li *ngFor="let photo of photos" class="col-12 col-md-4">
+    <app-photo
+      [url]="photo.url"
+      [description]="photo.description">
+    </app-photo>
+  </li>
+</ol>
+-->
+<p class="text-center text-muted" *ngIf="!photos.length">
+  Sorry, no Photos
+</p>
+<ol class="list-unstyled">
+  <li *ngFor="let cols of rows" class="row">
+    <div *ngFor="let photo of cols" class="col-4">
+      <app-photo
+        [url]="photo.url"
+        [description]="photo.description">
+    </app-photo>
+    <p>{{photo.description}}</p>
+    </div>
+  </li>
+</ol>
